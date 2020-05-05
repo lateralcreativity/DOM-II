@@ -69,3 +69,24 @@ body.addEventListener('dragend', event => {
     event.target.style.opacity = '100%';
 });
 // ----------------- drag and dragend end -----------------
+
+// ----------------- Prevent links from going to href -----------------
+document.querySelectorAll('nav a').forEach(x => x.addEventListener('click', event => {
+    event.preventDefault();
+}));
+
+// .stopPropagation()
+
+const destinationDiv = document.querySelector('.destination');
+destinationDiv.addEventListener('click', event => {
+    console.log(event.target);
+    console.log(event.currentTarget);
+    // Paragraph is inside div so div also gets logged
+});
+
+destinationDiv.querySelector('p').addEventListener('click', event => {
+    // Paragraph inside div stops the bubble
+    // h4 will still show because it wasnt selected
+    console.log('stopPropagation activated try clicking h4 instead');
+    event.stopPropagation();
+});
