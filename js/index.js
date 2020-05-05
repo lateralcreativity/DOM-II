@@ -1,5 +1,4 @@
 // Your code goes here
-// hover fade animation added to all links
 
 // ----------------- mouseover & mouseout begin -----------------
 const links = document.querySelectorAll('a');
@@ -47,3 +46,9 @@ signUpBtn.forEach(x => x.addEventListener('click', event => {
     event.target.remove();
 }));
 // ----------------- click ends -----------------
+
+// ----------------- scroll begins -----------------
+window.addEventListener('scroll', () => {
+    console.log('scrolled');
+})
+// ----------------- scroll ends -----------------
