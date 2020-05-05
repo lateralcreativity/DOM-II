@@ -4,10 +4,10 @@
 // ----------------- mouseover & mouseout begin -----------------
 const links = document.querySelectorAll('a');
 links.forEach(x => x.addEventListener('mouseover', event => {
-    x.style.animation = 'fade 1s infinite';
+    event.target.style.animation = 'fade 1s infinite';
 }));
 links.forEach(x => x.addEventListener('mouseout', event => {
-    x.style.animation = 'none';
+    event.target.style.animation = 'none';
 }));
 // ----------------- mouseover & mouseout end -----------------
 
@@ -33,10 +33,17 @@ let blur = false;
 images.forEach(x => x.addEventListener('dblclick', event => {
     blur = !blur;
     if(blur){
-        x.style.filter = 'blur(4px)';
+        event.target.style.filter = 'blur(4px)';
     }
     if(!blur){
-        x.style.filter = 'none';
+        event.target.style.filter = 'none';
     }
 }));
 // ----------------- dblclick ends -----------------
+
+// ----------------- click begins -----------------
+const signUpBtn = document.querySelectorAll('.btn');
+signUpBtn.forEach(x => x.addEventListener('click', event => {
+    event.target.remove();
+}));
+// ----------------- click ends -----------------
