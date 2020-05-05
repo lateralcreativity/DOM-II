@@ -52,3 +52,20 @@ window.addEventListener('scroll', () => {
     console.log('scrolled');
 })
 // ----------------- scroll ends -----------------
+
+// ----------------- resize begins -----------------
+window.addEventListener('resize', (event) => {
+    console.log(`Height: ${event.target.innerHeight}`);
+    console.log(`Width: ${event.target.innerWidth}`);
+});
+// ----------------- resize ends -----------------
+
+// ----------------- drag and dragend begin -----------------
+const body = document.body;
+body.addEventListener('drag', event => {
+    event.target.style.opacity = '0%';
+});
+body.addEventListener('dragend', event => {
+    event.target.style.opacity = '100%';
+});
+// ----------------- drag and dragend end -----------------
